@@ -17,6 +17,6 @@ public interface BookService {
 
     BookEntity updateBook(Long id, BookEntity bookEntity) throws BookisUpToDateException;
 
-    BookEntity patchBook(Long id, BookEntity bookEntity) throws BookNotFoundException;
+    BookEntity patchBook(Long id, BookDTO bookDTO) throws BookNotFoundException;
 
 }

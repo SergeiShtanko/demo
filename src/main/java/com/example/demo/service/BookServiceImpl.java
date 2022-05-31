@@ -53,9 +53,9 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public BookEntity patchBook(Long id, BookEntity bookEntity) throws BookNotFoundException {
+    public BookEntity patchBook(Long id, BookDTO bookDTO) throws BookNotFoundException {
         BookEntity bookEntityTo = bookRepository.findById(id).orElseThrow(() -> new BookNotFoundException("Book not found by Id"));
-        bookMapper.mapWithNonNullValues(bookEntity, bookEntityTo);
+        bookMapper.mapWithNonNullValues(bookDTO, bookEntityTo);
         return bookRepository.save(bookEntityTo);
     }
 }

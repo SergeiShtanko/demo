@@ -2,9 +2,7 @@ package com.example.demo.dto;
 
 
 import com.example.demo.entity.BookEntity;
-/**
- * Idea to use this DTO is for OpenSource Mapper from Mapstruct instead of custom one
- * */
+
 public class BookDTO {
     private Long id;
     private String title;
@@ -14,7 +12,7 @@ public class BookDTO {
     private String description;
     private String publisher;
 
-    public BookDTO(Long id, String title, String author, int year, int pageQuantity, String description, String publisher) {
+    public BookDTO(Long id, String title, String author, Integer year, Integer pageQuantity, String description, String publisher) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -48,19 +46,19 @@ public class BookDTO {
         this.author = author;
     }
 
-    public int getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 
-    public int getPageQuantity() {
+    public Integer getPageQuantity() {
         return pageQuantity;
     }
 
-    public void setPageQuantity(int pageQuantity) {
+    public void setPageQuantity(Integer pageQuantity) {
         this.pageQuantity = pageQuantity;
     }
 

@@ -68,15 +68,7 @@ public class BookControllerImpl implements BookController{
                                     @RequestParam(required = false) Integer pageQuantity, @RequestParam(required = false) String description,
                                     @RequestParam(required = false) String publisher){
         try {
-            BookEntity bookEntity = new BookEntity();
-            bookEntity.setPublisher(publisher);
-            bookEntity.setDescription(description);
-            bookEntity.setYear(year);
-            bookEntity.setTitle(title);
-            bookEntity.setAuthor(author);
-            bookEntity.setPageQuantity(pageQuantity);
-
-            return ResponseEntity.ok(bookService.patchBook(id, bookEntity));
+            return ResponseEntity.ok(bookService.patchBook(id, new BookDTO(id, title, author, year, pageQuantity, description, publisher)));
         } catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
