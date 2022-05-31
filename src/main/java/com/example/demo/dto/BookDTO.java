@@ -12,6 +12,9 @@ public class BookDTO {
     private String description;
     private String publisher;
 
+    public BookDTO() {
+    }
+
     public BookDTO(Long id, String title, String author, Integer year, Integer pageQuantity, String description, String publisher) {
         this.id = id;
         this.title = title;

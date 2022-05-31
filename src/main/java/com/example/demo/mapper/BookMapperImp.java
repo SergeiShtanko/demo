@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class BookMapperImp implements BookMapper{
     @Override
-    public BookEntity mapWithNonNullValues(BookDTO bookEntityFrom, BookEntity bookEntityTo) {
+    public void mapWithNonNullValues(BookDTO bookEntityFrom, BookEntity bookEntityTo) {
         if (bookEntityFrom.getAuthor() != null){
             bookEntityTo.setAuthor(bookEntityFrom.getAuthor());
         }
@@ -26,6 +26,5 @@ public class BookMapperImp implements BookMapper{
         if (bookEntityFrom.getPublisher() != null){
             bookEntityTo.setPublisher(bookEntityFrom.getPublisher());
         }
-        return bookEntityTo;
     }
 }

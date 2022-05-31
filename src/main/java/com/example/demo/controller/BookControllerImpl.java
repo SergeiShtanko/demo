@@ -21,8 +21,7 @@ public class BookControllerImpl implements BookController{
     @PostMapping("/")
     public ResponseEntity createBook(@RequestBody BookEntity bookEntity){
         try {
-            bookService.saveBook(bookEntity);
-            return ResponseEntity.ok("Book was created successfully");
+            return ResponseEntity.ok(bookService.saveBook(bookEntity));
         } catch (BookAlreadyExistsException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e){
@@ -55,8 +54,8 @@ public class BookControllerImpl implements BookController{
     @PutMapping("/{id}")
     public ResponseEntity updateBook(@PathVariable Long id, @RequestBody BookEntity bookEntity){
         try {
-            bookService.updateBook(id, bookEntity);
-            return ResponseEntity.ok("Book updated successfully");
+
+            return ResponseEntity.ok(bookService.updateBook(id, bookEntity));
         } catch (BookisUpToDateException e) {
             return ResponseEntity.ok(e.getMessage());
         }
